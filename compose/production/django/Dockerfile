@@ -12,12 +12,12 @@ RUN apk update \
   && apk add libffi-dev py-cffi
 
 RUN addgroup -S django \
-    && adduser -S -G django django
+  && adduser -S -G django django
 
 # Requirements are installed here to ensure they will be cached.
 COPY ./requirements /requirements
 RUN pip install --no-cache-dir -r /requirements/production.txt \
-    && rm -rf /requirements
+  && rm -rf /requirements
 
 COPY ./compose/production/django/entrypoint /entrypoint
 RUN sed -i 's/\r//' /entrypoint
@@ -51,4 +51,4 @@ USER django
 
 WORKDIR /app
 
-ENTRYPOINT ["/entrypoint"]
+ENTRYPOINT ["source entrypoint"]
