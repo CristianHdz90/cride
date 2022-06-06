@@ -153,3 +153,6 @@ CELERY_TASK_SERIALIZER = "json"
 CELERY_RESULT_SERIALIZER = "json"
 CELERYD_TASK_TIME_LIMIT = 5 * 60
 CELERYD_TASK_SOFT_TIME_LIMIT = 60
+
+#  Custom auto-created primary keys
+DEFAULT_AUTO_FIELD = "django.db.models.AutoField"

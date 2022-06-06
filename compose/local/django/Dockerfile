@@ -41,4 +41,4 @@ RUN chmod +x /start-flower
 
 WORKDIR /app
 
-ENTRYPOINT ["source entrypoint"]
+ENTRYPOINT ["/entrypoint"]

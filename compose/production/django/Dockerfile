@@ -51,4 +51,4 @@ USER django
 
 WORKDIR /app
 
-ENTRYPOINT ["source entrypoint"]
+ENTRYPOINT ["/entrypoint"]
